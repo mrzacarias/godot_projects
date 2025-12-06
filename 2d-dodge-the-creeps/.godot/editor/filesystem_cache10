@@ -1,7 +1,7 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1763837794
+::res://::1765062618
 default_env.tres::Environment::593128715670524270::1763837790::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1763837699::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1765062568::0::1::::<><><>0<>0<><>::
 hud.gd::GDScript::2907494342236531541::1763837667::0::1::::<>CanvasLayer<><>0<>0<><>::
 hud.tscn::PackedScene::605066125567316002::1763581653::0::1::::<><><>0<>0<><>::uid://cpnuylcoc48v4::::res://fonts/xolonium-regular.ttf<>uid://bhooaiefvjurl::::res://hud.gd
 icon.png::CompressedTexture2D::5907186249136698915::1617655860::1763573031::1::::<><><>0<>0<>e46bf9f16a0db751e9a51b3f9955f812<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
@@ -28,7 +28,7 @@ player-walk-2.png::CompressedTexture2D::5380452080586162051::1510184520::1763573
 FONTLOG.txt::TextFile::-1::1503176804::0::1::::<><><>0<>0<><>::
 LICENSE.txt::TextFile::-1::1503176804::0::1::::<><><>0<>0<><>::
 xolonium-regular.ttf::FontFile::5853768713154919475::1503176804::1763573031::1::::<><><>0<>0<>c18d89f173416d3d510c3550d0e8025e<>res://.godot/imported/xolonium-regular.ttf-fa1578d14819ec17e5cf1fb3d6bd7246.fontdata::
-::res://html/::1763837699
-index.apple-touch-icon.png::CompressedTexture2D::4824218870611989535::1763837699::1763837343::1::::<><><>0<>0<>7f1859ad9cbef270b96f287a99917e2e<>res://.godot/imported/index.apple-touch-icon.png-501548209163ccca221df4fc6a7c3c2a.ctex::
-index.icon.png::CompressedTexture2D::3852205018796744165::1763837699::1763837343::1::::<><><>0<>0<>5962d7e094b80e5d8ebe14f80ceeb9c9<>res://.godot/imported/index.icon.png-86cfb60f248dbbcbb938966694a6fe5d.ctex::
-index.png::CompressedTexture2D::3431628875021959919::1763837699::1763837343::1::::<><><>0<>0<>18cb54ef277f801dee2af65e98c26248<>res://.godot/imported/index.png-598db4bc1a486d88543275db98553c06.ctex::
+::res://html/::1765062568
+index.apple-touch-icon.png::CompressedTexture2D::4824218870611989535::1765062568::1763837343::1::::<><><>0<>0<>7f1859ad9cbef270b96f287a99917e2e<>res://.godot/imported/index.apple-touch-icon.png-501548209163ccca221df4fc6a7c3c2a.ctex::
+index.icon.png::CompressedTexture2D::3852205018796744165::1765062568::1763837343::1::::<><><>0<>0<>5962d7e094b80e5d8ebe14f80ceeb9c9<>res://.godot/imported/index.icon.png-86cfb60f248dbbcbb938966694a6fe5d.ctex::
+index.png::CompressedTexture2D::3431628875021959919::1765062568::1763837343::1::::<><><>0<>0<>18cb54ef277f801dee2af65e98c26248<>res://.godot/imported/index.png-598db4bc1a486d88543275db98553c06.ctex::

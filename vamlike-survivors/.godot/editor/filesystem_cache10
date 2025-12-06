@@ -1,9 +1,9 @@
 72322a848ab928aa5c89f0cb78209805
-::res://::1763821228
+::res://::1765062580
 bullet.gd::GDScript::7060700600407794512::1763787164::0::1::::<>Area2D<><>0<>0<><>::
 bullet.tscn::PackedScene::3785759961352245734::1763788683::0::1::::<><><>0<>0<><>::uid://dftkbqwsfd68r::::res://pistol/projectile.png<>uid://c7uiybwan21ng::::res://bullet.gd
 default_bus_layout.tres::AudioBusLayout::6564268947468103023::1740512783::0::1::::<><><>0<>0<><>::
-export_presets.cfg::TextFile::-1::1763788716::0::1::::<><><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1763821255::0::1::::<><><>0<>0<><>::
 game.gd::GDScript::7386309928009435014::1763787723::0::1::::<>Node2D<><>0<>0<><>::
 game.tscn::PackedScene::6881727730672560566::1763786427::0::1::::<><><>0<>0<><>::uid://u77qnw6rmmmy::::res://player.tscn<>uid://ddh8pe3p3wkh7::::res://game.gd<>uid://b10bs062jhbc8::::res://tree.tscn<>uid://bvn8k5xqr8qkn::::res://hud.tscn<>uid://bw1t7ykdwyu44::::res://sounds/house-in-a-forest-loop.ogg<>uid://bnca3r2jaltvl::::res://sounds/game-over.wav
 gun.gd::GDScript::1873698731063939854::1763788139::0::1::::<>Area2D<><>0<>0<><>::
@@ -89,10 +89,10 @@ slime_body.png::CompressedTexture2D::8645940357922743702::1740512783::1763652787
 slime_body_hurt.png::CompressedTexture2D::3723476765009385039::1740512783::1763652787::1::::<><><>0<>0<>e6e64a8ad38dfdd103f291be1b2f909e<>res://.godot/imported/slime_body_hurt.png-3f38b75e5ebee1f99a984b348a7e7f8b.ctex::
 slime_face.png::CompressedTexture2D::6595643196702037820::1740512783::1763652787::1::::<><><>0<>0<>295e0b177e30a68e666c8dbeb88fc227<>res://.godot/imported/slime_face.png-561a1f87b138570340118953f07aab21.ctex::
 slime_hurt_eyes.png::CompressedTexture2D::4791010527445338927::1740512783::1763652787::1::::<><><>0<>0<>ae8d21bff9037f535f86bd4e37c2edc1<>res://.godot/imported/slime_hurt_eyes.png-711256b4a2a47dcea723d274f00b4628.ctex::
-::res://html/::1763788715
-index.apple-touch-icon.png::CompressedTexture2D::5891763135915985360::1763788715::1763670591::1::::<><><>0<>0<>d7efb09fc813b2bbe5183248d46782f1<>res://.godot/imported/index.apple-touch-icon.png-501548209163ccca221df4fc6a7c3c2a.ctex::
-index.icon.png::CompressedTexture2D::7248537046025608911::1763788715::1763670591::1::::<><><>0<>0<>17174c109a49f885dc0e6b41f9b3205c<>res://.godot/imported/index.icon.png-86cfb60f248dbbcbb938966694a6fe5d.ctex::
-index.png::CompressedTexture2D::2147097720650972078::1763788715::1763670591::1::::<><><>0<>0<>efa5271157f818ebaee2aa5f0523c96c<>res://.godot/imported/index.png-598db4bc1a486d88543275db98553c06.ctex::
+::res://html/::1763821254
+index.apple-touch-icon.png::CompressedTexture2D::5891763135915985360::1763821254::1763670591::1::::<><><>0<>0<>d7efb09fc813b2bbe5183248d46782f1<>res://.godot/imported/index.apple-touch-icon.png-501548209163ccca221df4fc6a7c3c2a.ctex::
+index.icon.png::CompressedTexture2D::7248537046025608911::1763821254::1763670591::1::::<><><>0<>0<>17174c109a49f885dc0e6b41f9b3205c<>res://.godot/imported/index.icon.png-86cfb60f248dbbcbb938966694a6fe5d.ctex::
+index.png::CompressedTexture2D::2147097720650972078::1763821254::1763670591::1::::<><><>0<>0<>efa5271157f818ebaee2aa5f0523c96c<>res://.godot/imported/index.png-598db4bc1a486d88543275db98553c06.ctex::
 ::res://pistol/::1763652787
 pistol.png::CompressedTexture2D::6081771334990092076::1740512783::1763652787::1::::<><><>0<>0<>b85f4b3ee628cbc6450821901f9243a7<>res://.godot/imported/pistol.png-ccb9a9487ce225cdf094ad33c19c2ede.ctex::
 projectile.png::CompressedTexture2D::7550039277502144023::1740512783::1763652787::1::::<><><>0<>0<>b35a20476da45fbc63c10ec1958f5ef1<>res://.godot/imported/projectile.png-e03ae856d530df914009475206433400.ctex::
