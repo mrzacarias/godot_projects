@@ -1,0 +1,13 @@
+{
+    "godot_tools.editor_path": "/Applications/Godot.app/Contents/MacOS/Godot",
+    "godot_tools.gdscript_lsp_server_port": 6005,
+    "godot_tools.gdscript_lsp_server_host": "127.0.0.1",
+    "files.associations": {
+        "*.gd": "gdscript",
+        "*.cs": "csharp"
+    },
+    "[gdscript]": {
+        "editor.insertSpaces": false,
+        "editor.detectIndentation": false
+    }
+}

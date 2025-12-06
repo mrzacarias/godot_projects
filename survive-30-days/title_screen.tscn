@@ -1,0 +1,199 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3b3l0t5vp8ik"]
+
+[ext_resource type="Script" uid="uid://bar60nkh5787" path="res://title_screen.gd" id="1_title_screen"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_title_screen")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TitleLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 180
+text = "Survive 30 Days!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -295.0
+offset_top = 194.5
+offset_right = 295.0
+offset_bottom = 355.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NewGameButton" type="Button" parent="MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "New Game"
+
+[node name="HowToPlayButton" type="Button" parent="MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "How to Play"
+
+[node name="QuitButton" type="Button" parent="MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+
+[node name="HowToPlayScreen" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HowToPlayBackground" type="ColorRect" parent="HowToPlayScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="HowToPlayTitle" type="Label" parent="HowToPlayScreen"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 50.0
+offset_right = 200.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 60
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstructionsContainer" type="VBoxContainer" parent="HowToPlayScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -752.0
+offset_top = -200.0
+offset_right = 752.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MovementLabel" type="Label" parent="HowToPlayScreen/InstructionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "• Use WASD, arrow keys, mouse and/or touch to move the character"
+autowrap_mode = 2
+
+[node name="AxeLabel" type="Label" parent="HowToPlayScreen/InstructionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "• You start with an axe, use it to get resources like wood and rocks"
+autowrap_mode = 2
+
+[node name="FlashlightLabel" type="Label" parent="HowToPlayScreen/InstructionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "• Mobs don't like light, you can find shelter near the campfire and use a flashlight in your favor"
+autowrap_mode = 2
+
+[node name="RockLabel" type="Label" parent="HowToPlayScreen/InstructionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "• You can collect rocks and throw them at enemies"
+autowrap_mode = 2
+
+[node name="ChestsLabel" type="Label" parent="HowToPlayScreen/InstructionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "• You can find chests in the forest, they contain precious upgrades and items"
+autowrap_mode = 2
+
+[node name="HourglassLabel" type="Label" parent="HowToPlayScreen/InstructionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "• Hourglasses can make the days count increase faster, use that!"
+autowrap_mode = 2
+
+[node name="NightLabel" type="Label" parent="HowToPlayScreen/InstructionsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 43
+text = "• Be careful at night, mobs and something worse can attack you"
+autowrap_mode = 2
+
+[node name="BackButton" type="Button" parent="HowToPlayScreen"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 300.0
+offset_right = 100.0
+offset_bottom = 350.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[connection signal="pressed" from="MenuContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MenuContainer/HowToPlayButton" to="." method="_on_how_to_play_button_pressed"]
+[connection signal="pressed" from="MenuContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="HowToPlayScreen/BackButton" to="." method="_on_back_button_pressed"]

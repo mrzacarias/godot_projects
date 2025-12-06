@@ -1,0 +1,300 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5btbyev50s2q"]
+
+[ext_resource type="PackedScene" uid="uid://u77qnw6rmmmy" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://ddh8pe3p3wkh7" path="res://game.gd" id="1_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://b10bs062jhbc8" path="res://tree.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bvn8k5xqr8qkn" path="res://hud.tscn" id="4_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://bw1t7ykdwyu44" path="res://sounds/house-in-a-forest-loop.ogg" id="5_7mycd"]
+[ext_resource type="AudioStream" uid="uid://bnca3r2jaltvl" path="res://sounds/game-over.wav" id="6_272bh"]
+
+[sub_resource type="Curve2D" id="Curve2D_feb5d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -47, -68, 0, 0, 0, 0, 2004, -65, 0, 0, 0, 0, 2006, 1127, 0, 0, 0, 0, -51, 1129, 0, 0, 0, 0, -45, -65)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_fc0e3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -314.0
+offset_top = -266.0
+offset_right = 352.0
+offset_bottom = 290.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1.2032688e-06, 0.72459245, 0.47229093, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_80nbo")]
+unique_name_in_owner = true
+position = Vector2(940, 550)
+
+[node name="Path2D" type="Path2D" parent="Player"]
+position = Vector2(-940, -550)
+curve = SubResource("Curve2D_feb5d")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D"]
+unique_name_in_owner = true
+position = Vector2(-47, -68)
+rotation = 0.0014627001
+
+[node name="MobTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.7
+
+[node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
+unique_name_in_owner = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_7mycd")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+stream = ExtResource("6_272bh")
+
+[node name="Tree" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(397, 801)
+
+[node name="Tree2" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(311, 383)
+
+[node name="Tree3" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1430, 412)
+
+[node name="Tree4" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1505, 365)
+
+[node name="Tree5" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1421, 302)
+
+[node name="Tree6" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1675, 694)
+
+[node name="Tree7" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1235, 948)
+
+[node name="Tree8" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(677, 236)
+
+[node name="Tree9" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(638, 1124)
+
+[node name="Tree10" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(49, 1027)
+
+[node name="Tree11" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(83, 1075)
+
+[node name="Tree12" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(144, 1113)
+
+[node name="Tree13" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-160, 623)
+
+[node name="Tree14" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-175, 915)
+
+[node name="Tree15" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(163, 600)
+
+[node name="Tree16" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2058, 1242)
+
+[node name="Tree17" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1329, 1249)
+
+[node name="Tree18" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1728, 999)
+
+[node name="Tree19" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2056, -40)
+
+[node name="Tree20" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2164, 790)
+
+[node name="Tree21" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2058, 513)
+
+[node name="Tree22" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2050, 418)
+
+[node name="Tree23" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1671, -72)
+
+[node name="Tree24" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1169, 34)
+
+[node name="Tree25" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(539, -118)
+
+[node name="Tree26" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(193, -46)
+
+[node name="Tree27" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-198, 152)
+
+[node name="Tree28" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(76, 194)
+
+[node name="Tree29" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-217, 1306)
+
+[node name="Tree30" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(376, 1306)
+
+[node name="Tree31" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-224, -182)
+
+[node name="Tree32" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2259, 1363)
+
+[node name="Tree33" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1279, -232)
+
+[node name="Tree34" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(968, 1379)
+
+[node name="Tree35" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-27, 1417)
+
+[node name="Tree36" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(459, 828)
+
+[node name="Tree37" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(387, 854)
+
+[node name="Tree38" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(782, 877)
+
+[node name="Tree39" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-388, 1265)
+
+[node name="Tree40" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-327, 760)
+
+[node name="Tree41" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-331, 357)
+
+[node name="Tree42" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-460, -57)
+
+[node name="Tree43" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(368, 1508)
+
+[node name="Tree44" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1378, 1473)
+
+[node name="Tree45" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(729, 1500)
+
+[node name="Tree46" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1860, 1466)
+
+[node name="Tree47" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2400, 1041)
+
+[node name="Tree48" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2396, 604)
+
+[node name="Tree49" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2373, 137)
+
+[node name="Tree50" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1857, 190)
+
+[node name="Tree51" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2407, -156)
+
+[node name="Tree52" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(919, -228)
+
+[node name="Tree53" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-635, 204)
+
+[node name="Tree54" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-548, 543)
+
+[node name="Tree55" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-656, 885)
+
+[node name="Tree56" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-677, 1349)
+
+[node name="Tree57" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2627, 1353)
+
+[node name="Tree58" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2477, 1019)
+
+[node name="Tree59" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2598, 363)
+
+[node name="Tree60" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2669, 785)
+
+[node name="Tree61" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2677, -25)
+
+[node name="Tree62" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1754, -355)
+
+[node name="Tree63" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(468, -376)
+
+[node name="Tree64" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(29, -360)
+
+[node name="Tree65" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2176, 1558)
+
+[node name="Tree66" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(154, 1570)
+
+[node name="Tree67" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-462, 1021)
+
+[node name="Tree68" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-384, 1576)
+
+[node name="Tree69" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(-116, 1722)
+
+[node name="Tree70" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(379, 1722)
+
+[node name="Tree71" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(819, 1763)
+
+[node name="Tree72" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1077, 1576)
+
+[node name="Tree73" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1385, 1732)
+
+[node name="Tree74" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1623, 1298)
+
+[node name="Tree75" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(1815, 1717)
+
+[node name="Tree76" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2280, 1742)
+
+[node name="Tree77" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(2543, 1601)
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="powerup_selected" from="HUD" to="." method="_on_hud_powerup_selected"]
+[connection signal="quit_game" from="HUD" to="." method="_on_hud_quit_game"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="toggle_pause" from="HUD" to="." method="_on_hud_toggle_pause"]

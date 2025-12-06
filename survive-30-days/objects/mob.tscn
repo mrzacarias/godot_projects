@@ -1,0 +1,187 @@
+[gd_scene load_steps=28 format=3 uid="uid://bvqp8x7k5n8ej"]
+
+[ext_resource type="Script" path="res://objects/mob.gd" id="1_mob_script"]
+[ext_resource type="Script" path="res://characters/mob_character.gd" id="2_mob_character"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Idle/skeleton-Idle_00.png" id="3_idle_00"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Idle/skeleton-Idle_01.png" id="3_idle_01"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Idle/skeleton-Idle_02.png" id="3_idle_02"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Idle/skeleton-Idle_03.png" id="3_idle_03"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Idle/skeleton-Idle_04.png" id="3_idle_04"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Walk/skeleton-Walk_00.png" id="4_walk_00"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Walk/skeleton-Walk_01.png" id="4_walk_01"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Walk/skeleton-Walk_02.png" id="4_walk_02"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Walk/skeleton-Walk_03.png" id="4_walk_03"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Walk/skeleton-Walk_04.png" id="4_walk_04"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Attack/Attack_00.png" id="5_attack_00"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Attack/Attack_01.png" id="5_attack_01"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Attack/Attack_02.png" id="5_attack_02"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Attack/Attack_03.png" id="5_attack_03"]
+[ext_resource type="Texture2D" path="res://assets/characters/mob/Attack/Attack_04.png" id="5_attack_04"]
+[ext_resource type="Texture2D" path="res://assets/extra/ground_shadow.png" id="6_shadow_texture"]
+[ext_resource type="Texture2D" path="res://assets/extra/bonfire_fire/1.png" id="7_fire_01"]
+[ext_resource type="Texture2D" path="res://assets/extra/bonfire_fire/2.png" id="7_fire_02"]
+[ext_resource type="Texture2D" path="res://assets/extra/bonfire_fire/3.png" id="7_fire_03"]
+[ext_resource type="Texture2D" path="res://assets/extra/bonfire_fire/4.png" id="7_fire_04"]
+[ext_resource type="Texture2D" path="res://assets/extra/bonfire_fire/5.png" id="7_fire_05"]
+[ext_resource type="Texture2D" path="res://assets/extra/bonfire_fire/6.png" id="7_fire_06"]
+[ext_resource type="Texture2D" path="res://assets/extra/bonfire_fire/7.png" id="7_fire_07"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fire"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_fire_01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fire_02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fire_03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fire_04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fire_05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fire_06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fire_07")
+}],
+"loop": true,
+"name": &"fire",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mob"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_idle_00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_04")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_walk_00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_04")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_attack_00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_04")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_mob_light"]
+offsets = PackedFloat32Array(0, 0.4, 0.8, 1)
+colors = PackedColorArray(1, 0.7, 0.7, 1, 1, 0.5, 0.5, 0.8, 0.8, 0.3, 0.3, 0.4, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mob_light"]
+gradient = SubResource("Gradient_mob_light")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mob_collision"]
+radius = 30.0
+
+[node name="Mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_mob_script")
+speed = 150.0
+max_health = 20.0
+damage = 20.0
+attack_range = 80.0
+attack_cooldown = 1.0
+
+[node name="MobCharacter" type="Node2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_mob_character")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="MobCharacter"]
+sprite_frames = SubResource("SpriteFrames_mob")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="FireEffect" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -20)
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_fire")
+animation = &"fire"
+visible = false
+
+[node name="GroundShadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, 20)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_shadow_texture")
+modulate = Color(0.3, 0.3, 0.3, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mob_collision")
+debug_color = Color(0.8, 0.2, 0.2, 0.42)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_mob_collision")
+debug_color = Color(0.8, 0.8, 0.2, 0.42)
+
+[node name="MobLight" type="PointLight2D" parent="."]
+position = Vector2(0, 0)
+energy = 0.8
+texture = SubResource("GradientTexture2D_mob_light")
+texture_scale = 3.0
+color = Color(1, 0.7, 0.7, 1)

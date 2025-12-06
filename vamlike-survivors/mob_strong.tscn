@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6o4i2c2i0lsv"]
+
+[ext_resource type="Script" uid="uid://crko56e7ivx46" path="res://mob_strong.gd" id="1_poncy"]
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="2_kih4n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nokgg"]
+radius = 54.147945
+
+[node name="MobStrong" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+platform_floor_layers = 4294967040
+script = ExtResource("1_poncy")
+
+[node name="Slime" parent="." instance=ExtResource("2_kih4n")]
+unique_name_in_owner = true
+modulate = Color(1, 0.11764706, 0.11764706, 1)
+scale = Vector2(1.2, 1.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -33)
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CircleShape2D_nokgg")

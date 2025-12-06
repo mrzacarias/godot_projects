@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://e7gre1pegv33"]
+
+[ext_resource type="Script" uid="uid://doa8av76p6yjb" path="res://main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ceus671b5bpxh" path="res://mob.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://brb844cp0yfc7" path="res://player.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://ivdl6nnowci1" path="res://hud.tscn" id="4_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://bw1t7ykdwyu44" path="res://art/house-in-a-forest-loop.ogg" id="5_7mycd"]
+[ext_resource type="AudioStream" uid="uid://bnca3r2jaltvl" path="res://art/game-over.wav" id="6_272bh"]
+
+[sub_resource type="Curve2D" id="Curve2D_7dm0k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 480, 0, 0, 0, 0, 0, 480, 720, 0, 0, 0, 0, 0, 720, 0, 0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ig7tw")
+mob_scene = ExtResource("2_0xm2m")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+color = Color(0.16009733, 0.348177, 0.46768892, 1)
+
+[node name="MobPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_7dm0k")
+
+[node name="MobSpawnLocation" type="PathFollow2D" parent="MobPath"]
+
+[node name="Player" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(-80, 80)
+
+[node name="HUD" parent="." instance=ExtResource("4_1bvp3")]
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.7
+
+[node name="ScoreTimer" type="Timer" parent="."]
+
+[node name="StartTimer" type="Timer" parent="."]
+one_shot = true
+ignore_time_scale = true
+
+[node name="StartMarker" type="Marker2D" parent="."]
+position = Vector2(240, 240)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_7mycd")
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_272bh")
+
+[connection signal="hit" from="Player" to="." method="game_over"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]

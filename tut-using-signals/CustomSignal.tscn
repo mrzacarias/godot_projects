@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1prmvja38ir8"]
+
+[ext_resource type="PackedScene" path="res://CustomSignal/Player.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://CustomSignal/Enemy.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://CustomSignal/LifeBar.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://d0hofbmr6hwe0" path="res://CustomSignal/lifebar_foreground.png" id="4"]
+
+[node name="CustomSignal" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("2")]
+position = Vector2(570.022, 302.383)
+
+[node name="Player" parent="." instance=ExtResource("1")]
+position = Vector2(225, 310)
+
+[node name="LifeBar" parent="." instance=ExtResource("3")]
+max_value = 10.0
+value = 10.0
+texture_over = null
+texture_progress = ExtResource("4")
+
+[connection signal="health_changed" from="Player" to="LifeBar" method="_on_player_health_changed"]

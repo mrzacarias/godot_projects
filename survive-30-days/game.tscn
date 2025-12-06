@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5fodthelaeoa"]
+
+[ext_resource type="Script" uid="uid://c67n3a66esjwj" path="res://game.gd" id="1_3k8vj"]
+[ext_resource type="PackedScene" uid="uid://u77qnw6rmmmy" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://bvn8k5xqr8qkn" path="res://hud.tscn" id="2_4h8k2"]
+[ext_resource type="PackedScene" uid="uid://bkx8v7qr2k8yl" path="res://objects/campfire.tscn" id="2_fc0e3"]
+[ext_resource type="Shader" uid="uid://b0gml7ee85wux" path="res://shaders/distance_field_night.gdshader" id="5_distance_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_distance"]
+shader = ExtResource("5_distance_shader")
+shader_parameter/bonfire_position = Vector2(2160, 1440)
+shader_parameter/bonfire_radius = 400.0
+shader_parameter/screen_size = Vector2(1920, 1080)
+
+[sub_resource type="Curve2D" id="Curve2D_mob_spawn"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -1200, -800, 0, 0, 0, 0, 1200, -800, 0, 0, 0, 0, 1200, 800, 0, 0, 0, 0, -1200, 800, 0, 0, 0, 0, -1200, -800)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_3k8vj")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 4420.0
+offset_bottom = 2980.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.23075801, 0.4520008, 0.34334877, 1)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="NightLayer" type="CanvasLayer" parent="."]
+
+[node name="NightOverlay" type="ColorRect" parent="NightLayer"]
+visible = false
+material = SubResource("ShaderMaterial_distance")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Campfire" parent="." instance=ExtResource("2_fc0e3")]
+position = Vector2(2160, 1440)
+scale = Vector2(0.3, 0.3)
+
+[node name="Player" parent="." instance=ExtResource("1_80nbo")]
+unique_name_in_owner = true
+position = Vector2(2160, 1640)
+
+[node name="MobSpawnPath" type="Path2D" parent="Player"]
+curve = SubResource("Curve2D_mob_spawn")
+
+[node name="MobSpawnFollow" type="PathFollow2D" parent="Player/MobSpawnPath"]
+unique_name_in_owner = true
+
+[node name="HUD" parent="." instance=ExtResource("2_4h8k2")]
+unique_name_in_owner = true
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="quit_game" from="HUD" to="." method="_on_hud_quit_game"]
+[connection signal="toggle_pause" from="HUD" to="." method="_on_hud_toggle_pause"]

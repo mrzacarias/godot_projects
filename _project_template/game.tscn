@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://c5fodthelaeoa"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_3k8vj"]
+[ext_resource type="PackedScene" uid="uid://u77qnw6rmmmy" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://bvn8k5xqr8qkn" path="res://hud.tscn" id="2_4h8k2"]
+[ext_resource type="PackedScene" uid="uid://d22x3ti7hhumo" path="res://objects/tree.tscn" id="2_e2o6t"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_3k8vj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.49019608, 1, 0.7647059, 1)
+
+[node name="Player" parent="." instance=ExtResource("1_80nbo")]
+unique_name_in_owner = true
+position = Vector2(573, 364)
+
+[node name="Tree" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(863, 296)
+
+[node name="Tree2" parent="." instance=ExtResource("2_e2o6t")]
+position = Vector2(298, 526)
+
+[node name="HUD" parent="." instance=ExtResource("2_4h8k2")]
+unique_name_in_owner = true
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="toggle_pause" from="HUD" to="." method="_on_hud_toggle_pause"]
+[connection signal="quit_game" from="HUD" to="." method="_on_hud_quit_game"]

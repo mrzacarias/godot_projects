@@ -1,0 +1,421 @@
+[gd_scene load_steps=78 format=3 uid="uid://c8xqay2m6n7qr"]
+
+[ext_resource type="Script" uid="uid://ckkeoe8ju1m2f" path="res://objects/boss.gd" id="1_boss_script"]
+[ext_resource type="Script" uid="uid://di1ihadqpcb3x" path="res://characters/boss_character.gd" id="2_boss_character"]
+[ext_resource type="Texture2D" uid="uid://b751im7sucy78" path="res://assets/characters/boss/Idle/Idle_000.png" id="3_idle_00"]
+[ext_resource type="Texture2D" uid="uid://dn6y0hj1o1sf7" path="res://assets/characters/boss/Idle/Idle_001.png" id="3_idle_01"]
+[ext_resource type="Texture2D" uid="uid://k2uww0li8bha" path="res://assets/characters/boss/Idle/Idle_002.png" id="3_idle_02"]
+[ext_resource type="Texture2D" uid="uid://b63cgha8gciry" path="res://assets/characters/boss/Idle/Idle_003.png" id="3_idle_03"]
+[ext_resource type="Texture2D" uid="uid://0j1iht7pygvi" path="res://assets/characters/boss/Idle/Idle_004.png" id="3_idle_04"]
+[ext_resource type="Texture2D" uid="uid://n7pxxs2vomo4" path="res://assets/characters/boss/Idle/Idle_005.png" id="3_idle_05"]
+[ext_resource type="Texture2D" uid="uid://c7huvsktpwmhp" path="res://assets/characters/boss/Idle/Idle_006.png" id="3_idle_06"]
+[ext_resource type="Texture2D" uid="uid://cijdviw0daw7q" path="res://assets/characters/boss/Idle/Idle_007.png" id="3_idle_07"]
+[ext_resource type="Texture2D" uid="uid://b3wxxlnla8bjd" path="res://assets/characters/boss/Idle/Idle_008.png" id="3_idle_08"]
+[ext_resource type="Texture2D" uid="uid://byt1nwv7pwb5u" path="res://assets/characters/boss/Idle/Idle_009.png" id="3_idle_09"]
+[ext_resource type="Texture2D" uid="uid://bdjg2re1ydwpn" path="res://assets/characters/boss/Idle/Idle_010.png" id="3_idle_10"]
+[ext_resource type="Texture2D" uid="uid://ckugfbu6bt8rb" path="res://assets/characters/boss/Idle/Idle_011.png" id="3_idle_11"]
+[ext_resource type="Texture2D" uid="uid://bhtfo4x75j066" path="res://assets/characters/boss/Idle/Idle_012.png" id="3_idle_12"]
+[ext_resource type="Texture2D" uid="uid://ttuyltoanjhe" path="res://assets/characters/boss/Idle/Idle_013.png" id="3_idle_13"]
+[ext_resource type="Texture2D" uid="uid://0uie782r3x7l" path="res://assets/characters/boss/Idle/Idle_014.png" id="3_idle_14"]
+[ext_resource type="Texture2D" uid="uid://c477weru1m30o" path="res://assets/characters/boss/Idle/Idle_015.png" id="3_idle_15"]
+[ext_resource type="Texture2D" uid="uid://dkxkawwpqi1nv" path="res://assets/characters/boss/Idle/Idle_016.png" id="3_idle_16"]
+[ext_resource type="Texture2D" uid="uid://ynepo7dcj011" path="res://assets/characters/boss/Idle/Idle_017.png" id="3_idle_17"]
+[ext_resource type="Texture2D" uid="uid://cp3bq66mhtg3m" path="res://assets/characters/boss/Walking/Walking_000.png" id="4_walk_00"]
+[ext_resource type="Texture2D" uid="uid://cvvih8ykbx3sp" path="res://assets/characters/boss/Walking/Walking_001.png" id="4_walk_01"]
+[ext_resource type="Texture2D" uid="uid://kktxk65r0fgb" path="res://assets/characters/boss/Walking/Walking_002.png" id="4_walk_02"]
+[ext_resource type="Texture2D" uid="uid://cp8paorw4sj78" path="res://assets/characters/boss/Walking/Walking_003.png" id="4_walk_03"]
+[ext_resource type="Texture2D" uid="uid://b7vjh314jatdd" path="res://assets/characters/boss/Walking/Walking_004.png" id="4_walk_04"]
+[ext_resource type="Texture2D" uid="uid://bb1r4fyjtsgnq" path="res://assets/characters/boss/Walking/Walking_005.png" id="4_walk_05"]
+[ext_resource type="Texture2D" uid="uid://bimykg6hgo7cn" path="res://assets/characters/boss/Walking/Walking_006.png" id="4_walk_06"]
+[ext_resource type="Texture2D" uid="uid://0oc8qig207rr" path="res://assets/characters/boss/Walking/Walking_007.png" id="4_walk_07"]
+[ext_resource type="Texture2D" uid="uid://prc0ngf5ttkf" path="res://assets/characters/boss/Walking/Walking_008.png" id="4_walk_08"]
+[ext_resource type="Texture2D" uid="uid://dd05jf0xu6wam" path="res://assets/characters/boss/Walking/Walking_009.png" id="4_walk_09"]
+[ext_resource type="Texture2D" uid="uid://drom7or1iqys1" path="res://assets/characters/boss/Walking/Walking_010.png" id="4_walk_10"]
+[ext_resource type="Texture2D" uid="uid://kyacodyxbyiq" path="res://assets/characters/boss/Walking/Walking_011.png" id="4_walk_11"]
+[ext_resource type="Texture2D" uid="uid://lnkp5uvoli45" path="res://assets/characters/boss/Walking/Walking_012.png" id="4_walk_12"]
+[ext_resource type="Texture2D" uid="uid://bslctyljf8u4u" path="res://assets/characters/boss/Walking/Walking_013.png" id="4_walk_13"]
+[ext_resource type="Texture2D" uid="uid://bjdm3me2fyr7e" path="res://assets/characters/boss/Walking/Walking_014.png" id="4_walk_14"]
+[ext_resource type="Texture2D" uid="uid://8mjlb0c3a5u6" path="res://assets/characters/boss/Walking/Walking_015.png" id="4_walk_15"]
+[ext_resource type="Texture2D" uid="uid://blppht4ppu7cl" path="res://assets/characters/boss/Walking/Walking_016.png" id="4_walk_16"]
+[ext_resource type="Texture2D" uid="uid://xhy6ahsk61yc" path="res://assets/characters/boss/Walking/Walking_017.png" id="4_walk_17"]
+[ext_resource type="Texture2D" uid="uid://3hklwc8at71d" path="res://assets/characters/boss/Walking/Walking_018.png" id="4_walk_18"]
+[ext_resource type="Texture2D" uid="uid://crki36vmwtwv3" path="res://assets/characters/boss/Walking/Walking_019.png" id="4_walk_19"]
+[ext_resource type="Texture2D" uid="uid://bwkxe07bljlbk" path="res://assets/characters/boss/Walking/Walking_020.png" id="4_walk_20"]
+[ext_resource type="Texture2D" uid="uid://couctk44lfbty" path="res://assets/characters/boss/Walking/Walking_021.png" id="4_walk_21"]
+[ext_resource type="Texture2D" uid="uid://b3boafo8y0dwc" path="res://assets/characters/boss/Walking/Walking_022.png" id="4_walk_22"]
+[ext_resource type="Texture2D" uid="uid://s14oegamn73e" path="res://assets/characters/boss/Walking/Walking_023.png" id="4_walk_23"]
+[ext_resource type="Texture2D" uid="uid://ddujpe8gm54fj" path="res://assets/characters/boss/Slashing/Slashing_000.png" id="5_attack_00"]
+[ext_resource type="Texture2D" uid="uid://cjjb0hjyt2wuc" path="res://assets/characters/boss/Slashing/Slashing_001.png" id="5_attack_01"]
+[ext_resource type="Texture2D" uid="uid://b7egt6bc8jejs" path="res://assets/characters/boss/Slashing/Slashing_002.png" id="5_attack_02"]
+[ext_resource type="Texture2D" uid="uid://2b2hyks3v8ay" path="res://assets/characters/boss/Slashing/Slashing_003.png" id="5_attack_03"]
+[ext_resource type="Texture2D" uid="uid://bcg2uqkmgiunq" path="res://assets/characters/boss/Slashing/Slashing_004.png" id="5_attack_04"]
+[ext_resource type="Texture2D" uid="uid://dqnv72cv5gsyf" path="res://assets/characters/boss/Slashing/Slashing_005.png" id="5_attack_05"]
+[ext_resource type="Texture2D" uid="uid://dv522gf5k0n0l" path="res://assets/characters/boss/Slashing/Slashing_006.png" id="5_attack_06"]
+[ext_resource type="Texture2D" uid="uid://cq2uyvxe00lps" path="res://assets/characters/boss/Slashing/Slashing_007.png" id="5_attack_07"]
+[ext_resource type="Texture2D" uid="uid://d3cpxmo72yfyw" path="res://assets/characters/boss/Slashing/Slashing_008.png" id="5_attack_08"]
+[ext_resource type="Texture2D" uid="uid://ceiwkfxdr8k2h" path="res://assets/characters/boss/Slashing/Slashing_009.png" id="5_attack_09"]
+[ext_resource type="Texture2D" uid="uid://cfpuev32nvr0p" path="res://assets/characters/boss/Slashing/Slashing_010.png" id="5_attack_10"]
+[ext_resource type="Texture2D" uid="uid://7f1wmniqpvyw" path="res://assets/characters/boss/Slashing/Slashing_011.png" id="5_attack_11"]
+[ext_resource type="Texture2D" uid="uid://dy13dnjtopoy" path="res://assets/characters/boss/Dying/Dying_000.png" id="6_dying_00"]
+[ext_resource type="Texture2D" uid="uid://camuayxou3rny" path="res://assets/characters/boss/Dying/Dying_001.png" id="6_dying_01"]
+[ext_resource type="Texture2D" uid="uid://spatnvhd5wbs" path="res://assets/characters/boss/Dying/Dying_002.png" id="6_dying_02"]
+[ext_resource type="Texture2D" uid="uid://dev6amabdo5uf" path="res://assets/characters/boss/Dying/Dying_003.png" id="6_dying_03"]
+[ext_resource type="Texture2D" uid="uid://dtidj57n7dlge" path="res://assets/characters/boss/Dying/Dying_004.png" id="6_dying_04"]
+[ext_resource type="Texture2D" uid="uid://mcl5xvkx6ixm" path="res://assets/characters/boss/Dying/Dying_005.png" id="6_dying_05"]
+[ext_resource type="Texture2D" uid="uid://ci28uryf012t7" path="res://assets/characters/boss/Dying/Dying_006.png" id="6_dying_06"]
+[ext_resource type="Texture2D" uid="uid://dakdxu7t4xag6" path="res://assets/characters/boss/Dying/Dying_007.png" id="6_dying_07"]
+[ext_resource type="Texture2D" uid="uid://d0i7kijjuoxbf" path="res://assets/characters/boss/Dying/Dying_008.png" id="6_dying_08"]
+[ext_resource type="Texture2D" uid="uid://dbk2k4rt4vhnv" path="res://assets/characters/boss/Dying/Dying_009.png" id="6_dying_09"]
+[ext_resource type="Texture2D" uid="uid://b0aywqt8rs64g" path="res://assets/characters/boss/Dying/Dying_010.png" id="6_dying_10"]
+[ext_resource type="Texture2D" uid="uid://b78vfqtn4qlyr" path="res://assets/characters/boss/Dying/Dying_011.png" id="6_dying_11"]
+[ext_resource type="Texture2D" uid="uid://d3w45svya7ie1" path="res://assets/characters/boss/Dying/Dying_012.png" id="6_dying_12"]
+[ext_resource type="Texture2D" uid="uid://cmn6g61dypug2" path="res://assets/characters/boss/Dying/Dying_013.png" id="6_dying_13"]
+[ext_resource type="Texture2D" uid="uid://f6jcw71slb64" path="res://assets/characters/boss/Dying/Dying_014.png" id="6_dying_14"]
+[ext_resource type="Texture2D" uid="uid://y443gpp1ts8i" path="res://assets/extra/ground_shadow.png" id="7_shadow_texture"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_000.png" id="8_hurt_00"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_001.png" id="8_hurt_01"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_002.png" id="8_hurt_02"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_003.png" id="8_hurt_03"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_004.png" id="8_hurt_04"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_005.png" id="8_hurt_05"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_006.png" id="8_hurt_06"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_007.png" id="8_hurt_07"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_008.png" id="8_hurt_08"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_009.png" id="8_hurt_09"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_010.png" id="8_hurt_10"]
+[ext_resource type="Texture2D" path="res://assets/characters/boss/Hurt/Hurt_011.png" id="8_hurt_11"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_boss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_attack_00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_09")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_attack_11")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_dying_00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_09")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dying_14")
+}],
+"loop": false,
+"name": &"dying",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_hurt_00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_09")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_hurt_11")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_idle_00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_09")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle_17")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_walk_00")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_03")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_09")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_walk_23")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o7cfq"]
+radius = 85.0
+height = 230.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b4m7y"]
+radius = 85.0
+height = 233.0
+
+[sub_resource type="Gradient" id="Gradient_boss_light"]
+offsets = PackedFloat32Array(0, 0.4, 0.8, 1)
+colors = PackedColorArray(1, 0.3, 0.3, 1, 1, 0.2, 0.2, 0.8, 0.8, 0.1, 0.1, 0.4, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_boss_light"]
+gradient = SubResource("Gradient_boss_light")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Boss" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_boss_script")
+speed = 195.0
+
+[node name="BossCharacter" type="Node2D" parent="."]
+unique_name_in_owner = true
+scale = Vector2(0.84, 0.84)
+script = ExtResource("2_boss_character")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="BossCharacter"]
+position = Vector2(-20.238102, -15.476192)
+sprite_frames = SubResource("SpriteFrames_boss")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="GroundShadow" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(4, 212.00002)
+scale = Vector2(2.4285715, 1.2)
+texture = ExtResource("7_shadow_texture")
+modulate = Color(0.3, 0.3, 0.3, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 105)
+shape = SubResource("CapsuleShape2D_o7cfq")
+debug_color = Color(0.8, 0.2, 0.2, 0.42)
+
+[node name="HurtBox" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, 102.5)
+shape = SubResource("CapsuleShape2D_b4m7y")
+debug_color = Color(0.8, 0.8, 0.2, 0.42)
+
+[node name="BossLight" type="PointLight2D" parent="."]
+visible = false
+color = Color(1, 0.3, 0.3, 1)
+energy = 1.2
+texture = SubResource("GradientTexture2D_boss_light")
+texture_scale = 4.0

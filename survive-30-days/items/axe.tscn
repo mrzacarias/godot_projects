@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1kcesysjd4ma"]
+
+[ext_resource type="Script" uid="uid://hi10ks001qls" path="res://items/axe.gd" id="1_0k8vx"]
+[ext_resource type="Texture2D" uid="uid://cbl7g814gg1c1" path="res://assets/items/axe/1.png" id="2_h5m3q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(286, 60)
+
+[node name="Axe" type="Node2D"]
+script = ExtResource("1_0k8vx")
+
+[node name="AxeSprite" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+texture = ExtResource("2_h5m3q")
+
+[node name="AxeArea" type="Area2D" parent="AxeSprite"]
+collision_layer = 0
+collision_mask = 15
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AxeSprite/AxeArea"]
+position = Vector2(365, 0)
+shape = SubResource("RectangleShape2D_1")

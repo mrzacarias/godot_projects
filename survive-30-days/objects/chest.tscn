@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxhqvqf7qlvlv"]
+
+[ext_resource type="Script" uid="uid://bvn8h7xq2ywqx" path="res://objects/chest.gd" id="1_0k8xj"]
+[ext_resource type="Texture2D" uid="uid://darxfmkjxr70k" path="res://assets/items/chest/closed.png" id="2_3f8kl"]
+[ext_resource type="Texture2D" uid="uid://y443gpp1ts8i" path="res://assets/extra/ground_shadow.png" id="3_ground_shadow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xb8w"]
+size = Vector2(108, 68)
+
+[node name="Chest" type="StaticBody2D"]
+script = ExtResource("1_0k8xj")
+
+[node name="GroundShadow" type="Sprite2D" parent="."]
+modulate = Color(0.3, 0.3, 0.3, 0.3)
+position = Vector2(0, 31)
+scale = Vector2(1.2, 0.8)
+texture = ExtResource("3_ground_shadow")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("2_3f8kl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_1xb8w")
