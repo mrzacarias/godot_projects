@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxvkxnqtyc7ys"]
+
+[ext_resource type="Script" uid="uid://flcwahri55bm" path="res://scenes/Main.gd" id="1_0hdqx"]
+[ext_resource type="PackedScene" uid="uid://cd57dltle5c71" path="res://scenes/MainMenu.tscn" id="2_main_menu"]
+[ext_resource type="PackedScene" uid="uid://d57dltle5c71" path="res://scenes/Base.tscn" id="3_base"]
+[ext_resource type="PackedScene" uid="uid://c5btbyev50s2q" path="res://scenes/Tower.tscn" id="4_tower"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0hdqx")
+
+[node name="MainMenu" parent="." instance=ExtResource("2_main_menu")]
+unique_name_in_owner = true
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Base" parent="." instance=ExtResource("3_base")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Tower" parent="." instance=ExtResource("4_tower")]
+unique_name_in_owner = true
+visible = false

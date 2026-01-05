@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfb73xelcvyx3"]
+
+[ext_resource type="Script" path="res://scenes/weapons/Knives.gd" id="1_knives_script"]
+
+[node name="Knives" type="Node2D"]
+script = ExtResource("1_knives_script")
+
+[node name="KnivesSprite" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+scale = Vector2(0.3, 0.3)

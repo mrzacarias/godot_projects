@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp0p4y8gc1twg"]
+
+[ext_resource type="Script" uid="uid://v0t711vs8kqy" path="res://scenes/weapons/Sword.gd" id="1_sword_script"]
+[ext_resource type="Texture2D" uid="uid://dltnia1k01u04" path="res://assets/weapons/sword/1.png" id="2_sword_sprite"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sword"]
+radius = 100.0
+
+[node name="Sword" type="Node2D"]
+script = ExtResource("1_sword_script")
+
+[node name="SwordSprite" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_sword_sprite")
+
+[node name="SwordArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+
+[node name="SwordCollision" type="CollisionShape2D" parent="SwordArea"]
+shape = SubResource("CircleShape2D_sword")

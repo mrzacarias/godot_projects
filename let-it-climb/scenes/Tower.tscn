@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://c5btbyev50s2q"]
+
+[ext_resource type="Script" path="res://scenes/Tower.gd" id="1_gd07c"]
+[ext_resource type="PackedScene" uid="uid://d22x3ti7hhumo" path="res://scenes/objects/Tree.tscn" id="2_00000"]
+[ext_resource type="PackedScene" uid="uid://caqfk2xng5v5u" path="res://scenes/objects/Rock.tscn" id="3_00000"]
+[ext_resource type="PackedScene" uid="uid://bxhqvqf7qlvlv" path="res://scenes/objects/Chest.tscn" id="4_00000"]
+[ext_resource type="PackedScene" uid="uid://c8k2xnqtyc7ys" path="res://scenes/Player.tscn" id="5_00000"]
+[ext_resource type="PackedScene" uid="uid://dtcuatt51eerc" path="res://scenes/enemies/BasicEnemy.tscn" id="6_00000"]
+[ext_resource type="Script" path="res://scripts/EnemySpawner.gd" id="7_00000"]
+[ext_resource type="Script" path="res://scripts/FloorGenerator.gd" id="8_00000"]
+
+[sub_resource type="Curve2D" id="Curve2D_feb5d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -47, -68, 0, 0, 0, 0, 2927, -65, 0, 0, 0, 0, 2927, 1987, 0, 0, 0, 0, -47, 1987, 0, 0, 0, 0, -47, -68)
+}
+point_count = 5
+
+[node name="Tower" type="Node2D" groups=["tower"]]
+y_sort_enabled = true
+script = ExtResource("1_gd07c")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 2880.0
+offset_bottom = 1920.0
+color = Color(0.2, 0.6, 0.2, 1)
+
+[node name="FloorGenerator" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("8_00000")
+world_width = 2880
+world_height = 1920
+tree_scene = ExtResource("2_00000")
+rock_scene = ExtResource("3_00000")
+chest_scene = ExtResource("4_00000")
+
+[node name="Player" parent="." instance=ExtResource("5_00000")]
+position = Vector2(1440, 960)
+
+[node name="EnemySpawner" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_00000")
+enemy_scene = ExtResource("6_00000")
+spawn_path_node_path = NodePath("../SpawnPath")
+
+[node name="SpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_feb5d")
+
+[node name="SpawnPathFollow" type="PathFollow2D" parent="SpawnPath"]
+unique_name_in_owner = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="TowerUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="FloorInfo" type="Label" parent="UI/TowerUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -80.0
+offset_right = 300.0
+offset_bottom = -20.0
+text = "Floor: 1
+Enemies: 0 remaining
+Chests: 0 remaining"
+vertical_alignment = 1
+
+[node name="PlayerStats" type="Label" parent="UI/TowerUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 120.0
+text = "HP: 100/100
+Floor: 1
+EXP: 0"
+vertical_alignment = 1
+
+[node name="ActionButtons" type="HBoxContainer" parent="UI/TowerUI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -60.0
+offset_right = -20.0
+offset_bottom = -20.0
+
+[node name="ContinueButton" type="Button" parent="UI/TowerUI/ActionButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continue Climbing"
+disabled = true
+
+[node name="ReturnButton" type="Button" parent="UI/TowerUI/ActionButtons"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Return to Base"

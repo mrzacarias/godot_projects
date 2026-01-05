@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxo0l7yqs0rmq"]
+
+[ext_resource type="Script" path="res://scenes/weapons/Bat.gd" id="1_bat_script"]
+[ext_resource type="Texture2D" path="res://assets/weapons/bat/1.png" id="2_bat_sprite"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bat"]
+radius = 110.0
+
+[node name="Bat" type="Node2D"]
+script = ExtResource("1_bat_script")
+
+[node name="BatSprite" type="Sprite2D" parent="."]
+visible = false
+z_index = 10
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_bat_sprite")
+
+[node name="BatArea" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+monitoring = false
+
+[node name="BatCollision" type="CollisionShape2D" parent="BatArea"]
+shape = SubResource("CircleShape2D_bat")
